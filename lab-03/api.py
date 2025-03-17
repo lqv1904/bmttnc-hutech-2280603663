@@ -60,7 +60,7 @@ def rsa_verify_signature():
     signature_hex = data['signature']
     public_key , _ = rsa_cipher.load_keys()
     signature = bytes.fromhex(signature_hex)
-    is_verified = rsa.cipher.verify(message , signature , public_key)
+    is_verified = rsa_cipher.verify(message , signature , public_key)
     return jsonify({'is verified': is_verified})
 
 
